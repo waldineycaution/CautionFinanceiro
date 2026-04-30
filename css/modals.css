@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════
+   modals.css — Overlays & Bottom Sheets
+   ═══════════════════════════════════════════════ */
+
+/* ── OVERLAY BACKDROP ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── BOTTOM SHEET ── */
+.sheet {
+  background: var(--navy2);
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 22px 22px 0 0;
+  padding: 18px 18px 36px;
+  border: 1px solid var(--border2);
+  border-bottom: none;
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 92vh;
+  overflow-y: auto;
+  /* Smooth scroll on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.overlay.open .sheet {
+  transform: translateY(0);
+}
+
+/* ── SHEET HANDLE ── */
+.sheet-handle {
+  width: 32px;
+  height: 3px;
+  background: var(--text3);
+  border-radius: 2px;
+  margin: 0 auto 18px;
+}
+
+/* ── SHEET TITLE ── */
+.sheet-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* ── BENEFIT EXPAND SECTION ── */
+.ben-section {
+  background: rgba(249, 115, 22, 0.04);
+  border: 1px solid rgba(249, 115, 22, 0.12);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-top: 8px;
+  animation: sheetFadeIn 0.25s ease;
+}
+
+@keyframes sheetFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SCROLLBAR INSIDE SHEET ── */
+.sheet::-webkit-scrollbar { width: 3px; }
+.sheet::-webkit-scrollbar-track { background: transparent; }
+.sheet::-webkit-scrollbar-thumb { background: var(--navy3); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════
+   DESKTOP MODAL OVERRIDES
+   On desktop, modals appear centered, not bottom sheet
+   ═══════════════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  .overlay {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sheet {
+    border-radius: 20px;
+    max-width: 480px;
+    max-height: 85vh;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--border2);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1),
+                opacity 0.28s ease;
+    opacity: 0;
+  }
+
+  .overlay.open .sheet {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  /* Hide the handle on desktop (it's a modal, not a bottom sheet) */
+  .sheet-handle { display: none; }
+
+  .sheet-title { font-size: 18px; margin-bottom: 20px; }
+}
