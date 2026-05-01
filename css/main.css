@@ -155,6 +155,9 @@ body::before {
   font-family: 'JetBrains Mono', monospace; font-weight: 500;
 }
 
+/* Desktop-main sempre visível — contém o #appMain */
+.desktop-main { display: flex; flex-direction: column; min-height: 100vh; }
+
 /* ── MOBILE CONTENT ── */
 .content {
   padding: 16px 16px 90px;
@@ -207,7 +210,6 @@ body::before {
 
 /* Sidebar sempre oculto no mobile — independente de orientação */
 .sidebar { display: none; }
-.desktop-main { display: none; }
 
 /* ════════════════════════════════════════════
    DESKTOP LAYOUT  (min-width: 1024px)
@@ -216,9 +218,9 @@ body::before {
 @media (min-width: 1024px) {
 
   /* Show desktop elements, hide mobile */
-  .header      { display: none; }
-  .bottom-nav  { display: none; }
-  .sidebar     { display: flex; }
+  .header       { display: none; }
+  .bottom-nav   { display: none; }
+  .sidebar      { display: flex; }
   .desktop-main { display: flex; }
 
   /* Full-screen shell */
