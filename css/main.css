@@ -156,7 +156,10 @@ body::before {
 }
 
 /* Desktop-main sempre visível — contém o #appMain */
-.desktop-main { display: flex; flex-direction: column; min-height: 100vh; }
+.desktop-main { display: block; }
+
+/* Desktop topbar escondido no mobile */
+.desktop-topbar { display: none; }
 
 /* ── MOBILE CONTENT ── */
 .content {
@@ -218,10 +221,11 @@ body::before {
 @media (min-width: 1024px) {
 
   /* Show desktop elements, hide mobile */
-  .header       { display: none; }
-  .bottom-nav   { display: none; }
-  .sidebar      { display: flex; }
-  .desktop-main { display: flex; }
+  .header        { display: none; }
+  .bottom-nav    { display: none; }
+  .sidebar       { display: flex; }
+  .desktop-main  { display: flex; flex-direction: column; min-height: 100vh; }
+  .desktop-topbar { display: flex; }
 
   /* Full-screen shell */
   body {
