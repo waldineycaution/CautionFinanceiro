@@ -22,7 +22,7 @@ const MONTHS = [
 const ESCALAS = ['6x1','5x2','4x2','4x3','12x36','Folguista','Integral','Meio período'];
 
 const CARGOS = [
-  'Gerente','Subgerente','Supervisor(a)','Vendedor(a)',
+  'Gerente','Subgerente','Supervisor(a)','Técnico','Vendedor(a)',
   'Caixa','Assistente','Estoquista','Coordenador(a)'
 ];
 
