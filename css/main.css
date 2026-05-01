@@ -205,14 +205,21 @@ body::before {
 /* ── DESKTOP FAB: hide on desktop ── */
 @media (min-width: 768px) { .fab { display: none !important; } }
 
-/* ════════════════════════════════════════════
-   DESKTOP LAYOUT  (min-width: 768px)
-   ════════════════════════════════════════════ */
-@media (min-width: 768px) {
+/* Sidebar sempre oculto no mobile — independente de orientação */
+.sidebar { display: none; }
+.desktop-main { display: none; }
 
-  /* Kill mobile-only elements */
+/* ════════════════════════════════════════════
+   DESKTOP LAYOUT  (min-width: 1024px)
+   Usa 1024px para não ativar em celular landscape
+   ════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+
+  /* Show desktop elements, hide mobile */
   .header      { display: none; }
   .bottom-nav  { display: none; }
+  .sidebar     { display: flex; }
+  .desktop-main { display: flex; }
 
   /* Full-screen shell */
   body {
@@ -462,7 +469,7 @@ body::before {
 .toast.show    { display: block; }
 .toast.visible { opacity: 1; }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .toast {
     top: 16px;
     left: calc(var(--sidebar-w) + (100vw - var(--sidebar-w)) / 2);
