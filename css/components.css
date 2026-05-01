@@ -514,7 +514,7 @@
 /* ═══════════════════════════════════════════════
    DESKTOP OVERRIDES  (min-width: 768px)
    ═══════════════════════════════════════════════ */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
   /* Hero card: slightly taller on desktop */
   .hero-card { padding: 28px 32px; }
