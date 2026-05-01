@@ -4,29 +4,29 @@
    network-first para dados Firebase/Sheets.
    ═══════════════════════════════════════════════ */
 
-const CACHE_NAME = 'cautionfin-v2';
+const CACHE_NAME = 'cautionfin-v3';
 
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/css/main.css',
-  '/css/components.css',
-  '/css/modals.css',
-  '/js/state.js',
-  '/js/utils.js',
-  '/js/firebase-config.js',
-  '/js/firebase.js',
-  '/js/data.js',
-  '/js/sheets.js',
-  '/js/app.js',
-  '/js/views/dashboard.js',
-  '/js/views/filiais.js',
-  '/js/views/gastos.js',
-  '/js/views/despesas.js',
-  '/js/views/config.js',
-  '/js/modals/employee.js',
-  '/js/modals/revenue.js',
-  '/js/modals/benefit.js',
+  './',
+  './index.html',
+  './css/main.css',
+  './css/components.css',
+  './css/modals.css',
+  './js/state.js',
+  './js/utils.js',
+  './js/firebase-config.js',
+  './js/firebase.js',
+  './js/data.js',
+  './js/sheets.js',
+  './js/app.js',
+  './js/views/dashboard.js',
+  './js/views/filiais.js',
+  './js/views/gastos.js',
+  './js/views/despesas.js',
+  './js/views/config.js',
+  './js/modals/employee.js',
+  './js/modals/revenue.js',
+  './js/modals/benefit.js',
   'https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap'
 ];
 
