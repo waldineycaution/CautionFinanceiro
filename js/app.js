@@ -10,7 +10,7 @@ const TOPBAR_TITLES = {
   config:   { title: 'Configurações',   sub: 'Integrações e preferências' },
 };
 
-function isDesktop() { return window.innerWidth >= 768; }
+function isDesktop() { return window.innerWidth >= 1024; }
 
 // ── RENDER ────────────────────────────────────
 function renderApp() {
