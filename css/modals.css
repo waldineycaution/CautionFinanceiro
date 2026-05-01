@@ -84,7 +84,7 @@
    DESKTOP MODAL OVERRIDES
    On desktop, modals appear centered, not bottom sheet
    ═══════════════════════════════════════════════ */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
   .overlay {
     align-items: center;
